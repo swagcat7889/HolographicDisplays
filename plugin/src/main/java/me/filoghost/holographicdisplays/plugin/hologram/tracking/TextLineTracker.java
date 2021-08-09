@@ -17,11 +17,12 @@ import java.util.Objects;
 
 public class TextLineTracker extends ClickableLineTracker<BaseTextLine> {
 
-    private final EntityID armorStandEntityID;
+    private EntityID armorStandEntityID;
 
     private final DisplayText displayText;
     private boolean displayTextChanged;
     private boolean allowPlaceholders;
+    private final NMSManager nmsManager;
 
     public TextLineTracker(
             BaseTextLine line,
@@ -31,6 +32,7 @@ public class TextLineTracker extends ClickableLineTracker<BaseTextLine> {
         super(line, nmsManager, lineClickListener);
         this.armorStandEntityID = nmsManager.newEntityID();
         this.displayText = new DisplayText(placeholderTracker);
+        this.nmsManager = nmsManager;
     }
 
     @Override
@@ -90,6 +92,9 @@ public class TextLineTracker extends ClickableLineTracker<BaseTextLine> {
     protected void addDestroyPackets(NMSPacketList packetList) {
         super.addDestroyPackets(packetList);
         packetList.addEntityDestroyPackets(armorStandEntityID);
+
+        System.out.println("Changing armor stand entity ID");
+        //armorStandEntityID = nmsManager.newEntityID();
     }
 
     @Override

@@ -14,7 +14,7 @@ import org.jetbrains.annotations.MustBeInvokedByOverriders;
 
 abstract class PositionBasedLineTracker<T extends BaseHologramLine> extends LineTracker<T> {
 
-    private static final int ENTITY_VIEW_RANGE = 64;
+    private static final int ENTITY_VIEW_RANGE = 32;
 
     protected double positionX;
     protected double positionY;

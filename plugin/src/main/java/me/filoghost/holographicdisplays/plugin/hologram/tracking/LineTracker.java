@@ -81,11 +81,6 @@ public abstract class LineTracker<T extends BaseHologramLine> {
     protected abstract boolean updatePlaceholders();
 
     private void updateTrackedPlayersAndSendPackets(Collection<? extends Player> onlinePlayers) {
-        if (!line.isInLoadedChunk()) {
-            clearTrackedPlayersAndSendPackets();
-            return;
-        }
-
         // Lazy initialization
         NMSPacketList spawnPacketList = null;
         NMSPacketList destroyPacketList = null;
