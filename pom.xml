@@ -9,6 +9,14 @@
     <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -253,9 +261,22 @@
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.9.1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                     <configuration>
+<!--                        <additionalOptions>&#45;&#45;frames</additionalOptions>-->
                         <sourceFileIncludes>
                             <include>**/holographicdisplays/api/**/*.java</include>
                         </sourceFileIncludes>
@@ -318,9 +339,6 @@
                                 <requireMavenVersion>
                                     <version>[3.6.0,)</version>
                                 </requireMavenVersion>
-                                <requireJavaVersion>
-                                    <version>[16,)</version>
-                                </requireJavaVersion>
                             </rules>
                         </configuration>
                     </execution>
@@ -376,4 +394,43 @@
             </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports/>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <reportSets>-->
+<!--                    <reportSet>-->
+<!--                        <id>aggregate</id>-->
+<!--                        <inherited>false</inherited>-->
+<!--                        <reports>-->
+<!--                            <report>aggregate</report>-->
+<!--                        </reports>-->
+<!--                    </reportSet>-->
+<!--                </reportSets>-->
+<!--                <configuration>-->
+<!--                    <sourceFileIncludes>-->
+<!--                        <include>**/holographicdisplays/api/**/*.java</include>-->
+<!--                    </sourceFileIncludes>-->
+<!--                    <sourceFileExcludes>-->
+<!--                        <exclude>**/holographicdisplays/api/internal/**/*.java</exclude>-->
+<!--                    </sourceFileExcludes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+        </plugins>
+    </reporting>
+
 </project>
