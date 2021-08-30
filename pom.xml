@@ -276,13 +276,7 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>3.3.0</version>
                     <configuration>
-<!--                        <additionalOptions>&#45;&#45;frames</additionalOptions>-->
-                        <sourceFileIncludes>
-                            <include>**/holographicdisplays/api/**/*.java</include>
-                        </sourceFileIncludes>
-                        <sourceFileExcludes>
-                            <exclude>**/holographicdisplays/api/internal/**/*.java</exclude>
-                        </sourceFileExcludes>
+                        <subpackages>me.filoghost.holographicdisplays.api</subpackages>
                     </configuration>
                 </plugin>
 
@@ -409,19 +403,19 @@
                     </reportSet>
                 </reportSets>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <reportSets>
-                    <reportSet>
-                        <id>aggregate</id>
-                        <inherited>false</inherited>
-                        <reports>
-                            <report>aggregate</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <reportSets>-->
+<!--                    <reportSet>-->
+<!--                        <id>aggregate</id>-->
+<!--                        <inherited>false</inherited>-->
+<!--                        <reports>-->
+<!--                            <report>aggregate</report>-->
+<!--                        </reports>-->
+<!--                    </reportSet>-->
+<!--                </reportSets>-->
+<!--            </plugin>-->
         </plugins>
     </reporting>
 
