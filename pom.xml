@@ -276,7 +276,12 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>3.3.0</version>
                     <configuration>
-                        <subpackages>me.filoghost.holographicdisplays.api</subpackages>
+                        <sourceFileIncludes>
+                            <include>**/me/filoghost/holographicdisplays/api/**/*.java</include>
+                        </sourceFileIncludes>
+                        <sourceFileExcludes>
+                            <exclude>**/me/filoghost/holographicdisplays/api/internal/**/*.java</exclude>
+                        </sourceFileExcludes>
                     </configuration>
                 </plugin>
 
@@ -333,6 +338,9 @@
                                 <requireMavenVersion>
                                     <version>[3.6.0,)</version>
                                 </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>[16,)</version>
+                                </requireJavaVersion>
                             </rules>
                         </configuration>
                     </execution>
@@ -394,28 +402,27 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
                 <reportSets>
                     <reportSet>
-                        <reports/>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
                     </reportSet>
                 </reportSets>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--                <reportSets>-->
-<!--                    <reportSet>-->
-<!--                        <id>aggregate</id>-->
-<!--                        <inherited>false</inherited>-->
-<!--                        <reports>-->
-<!--                            <report>aggregate</report>-->
-<!--                        </reports>-->
-<!--                    </reportSet>-->
-<!--                </reportSets>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
         </plugins>
     </reporting>
 
