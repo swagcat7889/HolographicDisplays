@@ -283,7 +283,7 @@
                             <exclude>**/me/filoghost/holographicdisplays/api/internal/**/*.java</exclude>
                         </sourceFileExcludes>
                         <windowtitle>Holographic Displays API</windowtitle>
-                        <doctitle>Holographic Displays API è§ — ${project.version}</doctitle>
+                        <doctitle>Holographic Displays API &amp;ndash; ${project.version}</doctitle>
                         <offlineLinks>
                             <offlineLink>
                                 <url>https://javadoc.io/doc/org.jetbrains/annotations/latest</url>
