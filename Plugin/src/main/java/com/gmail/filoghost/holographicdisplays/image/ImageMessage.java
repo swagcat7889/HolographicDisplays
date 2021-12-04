@@ -33,7 +33,7 @@ import com.gmail.filoghost.holographicdisplays.exception.TooWideException;
  */
 public class ImageMessage {
 	
-	public static final int MAX_WIDTH = 150;
+	public static final int MAX_WIDTH = 500;
 
 	private static final Map<ChatColor, Color> colorsMap = new HashMap<>();
 	private static final Map<ChatColor, Color> graysMap = new HashMap<>();
